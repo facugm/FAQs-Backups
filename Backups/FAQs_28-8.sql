@@ -82,7 +82,7 @@ INSERT INTO `relates` (`id`, `nombre`, `relate`, `createdAt`, `updatedAt`) VALUE
 /*!40000 ALTER TABLE `relates` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla FAQS.tags
+-- Volcando estructura para tabla FAQS.tags 
 CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
