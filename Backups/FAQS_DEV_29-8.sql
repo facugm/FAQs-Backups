@@ -11,8 +11,8 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Volcando estructura de base de datos para FAQS
-CREATE DATABASE IF NOT EXISTS `FAQS` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_bin */;
-USE `FAQS`;
+CREATE DATABASE IF NOT EXISTS `FAQS_DEV` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_bin */;
+USE `FAQS_DEV`;
 
 
 -- Volcando estructura para tabla FAQS.accounts
