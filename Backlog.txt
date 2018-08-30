@@ -1,0 +1,60 @@
+I.        Landing page
+* Crear botón de ingreso, el cual te lleva a la página III (Logueo).
+* Crear barra de búsqueda (Search A).
+   * En ella debe de poder buscarse artículos por tag. 
+   * Al escribir un tag o palabra clave, debe desplegarse una barra con aprox. 4 o 5 artículos de más relevancia relacionados con el tag.
+   * Te dirige hacia la página II (Artículo).
+* Crear Artículos Destacados debajo de la barra de búsqueda.
+   * Te dirigen hacia la página II.
+
+
+II.        Artículo
+* Crear una barra de búsqueda (Search A) que tenga la misma función que la barra de búsqueda de Landing Page.  
+* Crear botón para volver a Landing Page.
+* Debe aparecer el título del Artículo, el contenido de este y los Artículos Relacionados predefinidos cuando el Editor crea el Artículo en la página V. 
+
+
+III.        Logueo
+* Crear cuadro ingreso de usuario.
+* Crear cuadro ingreso de contraseña.
+* Crear botón de ingreso.
+   * Redirige a página IV (Lista de artículos).
+* Insertar título “Ingreso”.
+* Crear botón para volver a página de inicio.
+   * Redirige a página I (Landing page).
+* Crear checkbox “Recordar datos”.
+* Insertar iconos correspondientes al usuario y contraseña. 
+
+IV.        Lista de artículos
+* Crear tabla de 3 columnas: “Título”, “Tags” y “Acciones”.
+   * Título: título del artículo.
+   * Tags: tags del artículo.
+   * Acciones: opciones “Editar” y “Eliminar” artículo
+      * Al clickear “Eliminar” despliega ventana emergente que pregunta si está seguro de eliminarlo. 
+      * Al clickear “Editar” te dirige hacia la página V (Editor de artículos).
+* Crear botón para agregar artículo.
+   * Te dirige hacia la página V.
+* Crear botón para ordenar en “Título” y “Tags”.
+* Crear paginadores.
+* Mostrar listado de 10 artículos.
+* Crear barra de búsqueda de artículo (Search B)
+
+
+V.         Editor de artículos
+* Crear cuadro de edición de Rich Text Format (rtf)
+   * Al mismo se le podrán ingresar imágenes.
+* Insertar título “Editar”.
+* Insertar título “Título”.
+* Crear casilla para ingresar el título.
+* Crear título “Tags”.
+* Debajo de “Tags” crear barra para ingresar tags.
+   * Dicha barra autocompleta lo que uno escribe.
+* Crear título “Contenidos asociados”.
+* Crear barra para ingresar títulos de artículos. 
+   * Dicha barra autocompleta lo que uno escribe.
+* Crear botón “Guardar”.
+   * Al presionarlo despliega ventana emergente que pregunta si está seguro de guardar los cambios.
+   * Al aceptar la ventana emergente, esta te dirige a la página IV (Lista de Articulos).
+* Crear botón “Descartar cambios”.
+   * Al presionarlo despliega ventana emergente que pregunta si está seguro de descartar los cambios.
+   * Al aceptar la ventana emergente, esta te dirige a la página IV (Lista de Articulos).
