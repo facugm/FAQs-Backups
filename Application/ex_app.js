@@ -5,7 +5,7 @@ var url_biblio   = require('url');
 var app     = express();
  
 // Conexión
-var database = require('mysql');
+var database = require('./config/sqlcon.js');
 
 //Raíz
 app.get('/', function (req, res) {
