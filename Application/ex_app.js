@@ -5,7 +5,7 @@ var url_biblio   = require('url');
 var app     = express();
  
 // Conexión
-var database = require('/home/nemo/Documentos/Nemo_Pasantias/Application/mysql');
+var database = require('mysql');
 
 //Raíz
 app.get('/', function (req, res) {
