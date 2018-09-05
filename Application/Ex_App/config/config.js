@@ -9,7 +9,7 @@ const config = {
       name: 'ex-app'
     },
     port: process.env.PORT || 3000,
-    db: 'mysql://localhost/ex-app-development'
+    db: 'mysql://developer:nemonemo@10.45.0.87:3306/FAQS_DEV'
   },
 
   test: {
