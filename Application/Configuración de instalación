@@ -1,0 +1,9 @@
+  yo express
+? Would you like to create a new directory for your project? Yes
+? Enter directory name Ex_App
+? Select a version to install: MVC
+? Select a view engine to use: Handlebars
+? Select a css preprocessor to use: less
+? Select a database to use: MySQL
+? Select a build tool to use: Gulp
+
