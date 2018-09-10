@@ -19,17 +19,18 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/faqtag', (req, res, next) => {
-  const User = db.sequelize.define('USER_ACCOUNT',{
+  /*const User = db.sequelize.define('USER_ACCOUNT',{
     user_id : db.Sequelize.STRING,
     user_password : db.Sequelize.STRING
-  })
-  /*
+  })*/
+  
   var param   = req.params.tag;
-  db.sequelize.query("SELECT * FROM FAQ_TAG WHERE TAG = ?", { raw: false, replacements: [param]}
+  db.sequelize.query("SELECT * FROM FAQ_TAG"
   ).spread(myTableRows => {
     res.json(myTableRows)
-  });*/
-  User.findAll().spread(resultado => {
+  });
+
+  /*User.findAll().spread(resultado => {
     res.json(resultado)
-  })
+  })*/
 });
