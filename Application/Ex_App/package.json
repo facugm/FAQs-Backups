@@ -32,7 +32,6 @@
     "gulp-nodemon": "^2.0.2",
     "gulp-plumber": "^1.0.0",
     "mocha": "^4.0.1",
-    "nodemon": "^1.18.4",
     "nyc": "^10.0.0",
     "supertest": "^2.0.0",
     "ws": "3.3.2"
