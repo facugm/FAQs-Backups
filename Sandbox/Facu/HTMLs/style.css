@@ -1,0 +1,68 @@
+
+
+body {
+	padding: 0px;
+	background: #235784 !important;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 480px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #40a8c4;
+	border: 2px double #f7aa00;
+	border-radius: 10px;
+	}
+
+.form-signin-heading {
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+}
+
+input[type="text"] {
+	margin-bottom: 1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+	margin-bottom: 10%;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.barra-singin{
+	position: relative;
+	background-color: #083452;
+	box-shadow: 0px 2px 24px 8px rgba(0,0,0,0.38);
+}
+
+.glyphicon{
+	font-size: 20px;
+	position: relative;
+	padding: 1%;
+	top:25%;
+	left: 80%;
+	border: none;
+	background: transparent;
+	color: #f7aa00;
+}
+
+.glyphicon:hover{
+	color: #ffd57a;
+	}
+
+
