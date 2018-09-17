@@ -10,7 +10,7 @@
     
     <div class="search-bar">
         <input class="buscador-landingpage" type="text" id="menu1" placeholder="Search..." data-toggle="dropdown" onkeyup="filterFunction()"> </input>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <ul class="dropdown-menu" id= "menu" role="menu" aria-labelledby="menu1">
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTMLJKSHDNJKASNJDKASNKJDSAJKSA</a></li>
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
@@ -21,30 +21,12 @@
     </div>
   </div>
 
-   <script>
-
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementsByTagName("ul");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-  </script>
-
 
  
   
+  
     
-
+model first
   
 
 
