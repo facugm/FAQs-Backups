@@ -24,8 +24,11 @@ router.get('/', (req, res, next) => {
 
 router.get('/faqtag', (req, res, next) => {
 
-  db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME'], order: "VISITS" , limit: 5}).then((list_articles) => {
-    res.json(list_articles);
+  db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME'], order: "VISITS"}).then((list_articles) => {
+ // var article =JSON.stringify(list_articles);
+    res.render('landing_page', {
+      list_articles : list_articles
+    });
 });
 });
 
