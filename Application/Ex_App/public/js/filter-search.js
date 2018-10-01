@@ -1,15 +1,17 @@
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("menu1");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("menu");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
+$(function () {
+    function log(message) {
+        $("<div>").text(message).prependTo("#log");
+        $("#log").scrollTop(0);
     }
-}
+
+    $("#birds").autocomplete({
+        source: function (data) {
+            return "/faqtag/" + data;
+        },
+        minLength: 2,
+        select: function (event, ui) {
+            log("Selected: " + ui.item.value + " aka " + ui.item.id);
+        }
+    });
+});
+
