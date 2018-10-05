@@ -20,13 +20,13 @@ router.get('/', (req, res, next) => {
 });
 */
 
-router.get('/faqtag/', (req, res, err) => {
+router.get('/faqtag', (req, res, err) => {
   res.render('landing_page',{
       
   });
 });
 
-router.get('/faqtag/:pattern', (req, res, err) => {
+router.get('/search', (req, res, err) => {
 
  /*
   db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME'], order: "VISITS"}).then((list_articles) => {
@@ -38,8 +38,9 @@ router.get('/faqtag/:pattern', (req, res, err) => {
 
 });*/
 
-var pattern = req.params.pattern;
-db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], where: { ARTICLE_NAME:/*{ [Sequelize.Op.like]: '%'+*/ pattern/* +'%'}*/}}).then((response)=>{
+var pattern = req.query.term;
+console.log("PATRON", pattern);
+db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], where: { ARTICLE_NAME:{$like: "%" + pattern +  "%" }}}).then((response)=>{
   // PROCESAR PARA RETORNAR LO QUE SE DESEA
   var list = response.map(function(ele){
     return { id: ele.FAQ_FILE_ID, name: ele.ARTICLE_NAME };

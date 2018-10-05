@@ -6,12 +6,14 @@ $(function() {
     }
  
     $( "#articles" ).autocomplete({
-      source: function(data){ 
-        return "/faqtag/" + data;
+      source: function(req, res){
+        $.getJSON( "/search", req, function( data, status, xhr ) {                    
+          res( data );
+        }); 
       },
       minLength: 3,
       select: function( event, ui ) {
-        log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+        log( "Selected: " + ui.item.name + " ID " + ui.item.id );
       }
     });
   });

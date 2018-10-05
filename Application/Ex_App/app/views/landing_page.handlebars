@@ -9,12 +9,14 @@
     
     
     <div class="search-bar">
-        <input class="buscador-landingpage" type="text" id="menu1" placeholder="Search..." data-toggle="dropdown" onkeyup="filterFunction()"> </input>
-      <ul class="dropdown-menu" id= "menu" role="menu" aria-labelledby="menu1">
-           {{#each list_articles}}
-           <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{this.ARTICLE_NAME}}</a></li> 
-          {{/each}}
-    </ul>
+        <div class="ui-widget">
+            <label for="articles"></label>
+            <input id="articles">
+        </div>
+        <div class="ui-widget" style="margin-top:2em; font-family:Arial">
+            Result:
+            <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+        </div>
      <!-- <i class="glyphicon glyphicon-search"></i>-->
 
     </div>
