@@ -117,3 +117,7 @@ body {
   text-decoration: none;
   color: #40a8c4;
 }
+
+.ui-autocomplete {
+  z-index:1001 !important
+  }

@@ -22,7 +22,6 @@ router.get('/', (req, res, next) => {
 
 router.get('/faqtag', (req, res, err) => {
   res.render('landing_page',{
-      
   });
 });
 
@@ -40,7 +39,7 @@ router.get('/search', (req, res, err) => {
 
 var pattern = req.query.term;
 console.log("PATRON", pattern);
-db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], where: { ARTICLE_NAME:{$like: "%" + pattern +  "%" }}}).then((response)=>{
+db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], where: { ARTICLE_NAME:{$like: "%" + pattern + "%" }}}).then((response)=>{
   // PROCESAR PARA RETORNAR LO QUE SE DESEA
   var list = response.map(function(ele){
     return { id: ele.FAQ_FILE_ID, name: ele.ARTICLE_NAME };
