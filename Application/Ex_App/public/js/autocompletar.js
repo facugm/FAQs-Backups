@@ -7,8 +7,8 @@ $(function() {
  
     $( "#articles" ).autocomplete({
       source: function(req, res){
-        $.getJSON( "/search", req, function( data, status, xhr ) {                    
-          res( data );
+        $.getJSON( "/search", req, function( data, status, xhr ) {  
+          res(data);
         }); 
       },
       minLength: 3,
@@ -16,4 +16,4 @@ $(function() {
         log( "Selected: " + ui.item.name + " ID " + ui.item.id );
       }
     });
-  });
+});
