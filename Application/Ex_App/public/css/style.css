@@ -52,16 +52,11 @@ body {
 }
 .search-bar{
   position: relative;
+  width: 200%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
-  height: 60%;
-  padding: 0%;
   background-color: transparent;
-  border-radius: 100px;
-  
-
 }
 
 .buscador {
@@ -97,10 +92,6 @@ body {
 
 }
 
-.dropdown-menu{
-  background-color: #40a8c4;
-}
-
 .dropdown-menu > li > a {
   display: block;
   padding: 3px 20px;
@@ -119,5 +110,56 @@ body {
 }
 
 .ui-autocomplete {
-  z-index:1001 !important
-  }
+z-index:1001 !important;
+max-height: 13%;
+overflow-y: auto;
+/* prevent horizontal scrollbar */
+overflow-x: hidden;
+display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  background-color: #40a8c4;
+  color: #bcdbdf;
+  white-space: nowrap;
+  box-shadow: -1px 10px 26px -7px rgba(0,0,0,0.75);
+}
+
+..ui-state-hover{
+z-index:1001 !important;
+max-height: 13%;
+overflow-y: auto;
+/* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  background-color: #40a8c4;
+  color: #bcdbdf;
+  white-space: nowrap;
+  box-shadow: -1px 10px 26px -7px rgba(0,0,0,0.75);
+}
+ 
+* html .ui-autocomplete {
+height: 100px;
+}
+
+#articles{
+width: 100%;
+border: none;
+height: 100%;
+}
+
+::-webkit-scrollbar-track {
+      background-color: blue;
+} 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+} 
+::-webkit-scrollbar-button {
+      background-color: navy;
+}
+

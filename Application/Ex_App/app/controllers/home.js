@@ -39,10 +39,10 @@ router.get('/search', (req, res, err) => {
 
 var pattern = req.query.term;
 console.log("PATRON", pattern);
-db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], where: { ARTICLE_NAME:{$like: "%" + pattern + "%" }}}).then((response)=>{
+db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], limit: 10, order: ['ARTICLE_NAME'], where: { ARTICLE_NAME:{$like: "%" + pattern + "%" }}}).then((response)=>{
   // PROCESAR PARA RETORNAR LO QUE SE DESEA
   var list = response.map(function(ele){
-    return { id: ele.FAQ_FILE_ID, name: ele.ARTICLE_NAME };
+    return { id: ele.FAQ_FILE_ID, value: ele.ARTICLE_NAME, label: ele.ARTICLE_NAME };
   })
   res.json(list);
 });
