@@ -1,4 +1,4 @@
-I.        Landing page
+   I.        Landing page
 * Crear botón de ingreso, el cual te lleva a la página III (Logueo).
 * Crear barra de búsqueda (Search A).
    * En ella debe de poder buscarse artículos por tag. 
@@ -8,13 +8,14 @@ I.        Landing page
    * Te dirigen hacia la página II.
 
 
-II.        Artículo
-* Crear una barra de búsqueda (Search A) que tenga la misma función que la barra de búsqueda de Landing Page.  
+    II.        Artículo
+* Mostrar título del artículo y su contenido
+* Crear una barra de búsqueda (Search A) que tenga la misma función que la barra de búsqueda de Landing Page.
+* Mostrar imagen del artículo. En caso de no tener imagen, no mostar nada
+* Crear lista de artículos relacionados
 * Crear botón para volver a Landing Page.
-* Debe aparecer el título del Artículo, el contenido de este y los Artículos Relacionados predefinidos cuando el Editor crea el Artículo en la página V. 
 
-
-III.        Logueo
+    III.        Logueo
 * Crear cuadro ingreso de usuario.
 * Crear cuadro ingreso de contraseña.
 * Crear botón de ingreso.
@@ -23,9 +24,9 @@ III.        Logueo
 * Crear botón para volver a página de inicio.
    * Redirige a página I (Landing page).
 * Crear checkbox “Recordar datos”.
-* Insertar iconos correspondientes al usuario y contraseña. 
-
-IV.        Lista de artículos
+* Insertar iconos correspondientes al usuario y contraseña.
+ 
+    IV.        Lista de artículos
 * Crear tabla de 3 columnas: “Título”, “Tags” y “Acciones”.
    * Título: título del artículo.
    * Tags: tags del artículo.
@@ -40,7 +41,7 @@ IV.        Lista de artículos
 * Crear barra de búsqueda de artículo (Search B)
 
 
-V.         Editor de artículos
+    V.         Editor de artículos
 * Crear cuadro de edición de Rich Text Format (rtf)
    * Al mismo se le podrán ingresar imágenes.
 * Insertar título “Editar”.
