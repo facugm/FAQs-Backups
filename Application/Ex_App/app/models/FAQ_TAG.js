@@ -1,56 +1,41 @@
 /* jshint indent: 2 */
-module.exports = function (sequelize, DataTypes) {
+
+
+
+module.exports = function(sequelize, DataTypes) {
 
   return sequelize.define('FAQ_TAG', {
 
     FAQ_TAG_ID: {
 
       type: DataTypes.INTEGER(10).UNSIGNED,
-
       allowNull: false,
-
-      defaultValue: '0',
-
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
 
     },
 
     TAG_NAME: {
 
       type: DataTypes.STRING(50),
-
-      allowNull: false
+      allowNull: false,
+      unique: true
 
     },
 
     TAG: {
 
       type: DataTypes.STRING(20),
-
-      allowNull: false
-
-    },
-
-    CREATED_AT: {
-
-      type: DataTypes.DATE,
-
-      allowNull: true
-
-    },
-
-    UPDATED_AT: {
-
-      type: DataTypes.DATE,
-
-      allowNull: true
+      allowNull: false,
+      unique: true
 
     }
 
   }, {
 
-      tableName: 'FAQ_TAG'
+    tableName: 'FAQ_TAG'
 
-    });
+  });
 
 };
+

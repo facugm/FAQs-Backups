@@ -4,25 +4,23 @@
     {{> search}}
 </div>
 
-<div class="aligncenter">
+<div class="aligne">
+
+
 <div class= "article-container">
-    <h1>{{titulo}}</h1>
+    <h1 class="article-title">{{titulo}}</h1>
 
     <div class="relacionados">
-        <li>hola</li>
-         <li>hola</li>
-          <li>hola</li>
-           <li>hola</li>
-            <li>hola</li>
-             <li>hola</li>
-              <li>hola</li>
-               <li>hola</li>
-                <li>hola</li>
-    </div>
+     {{#each related}}
 
-        <div class="article-text">{{{texto}}} </div>
+       <ul class="rel">
+           <li class="rel"> {{this.article}}</li>
+       </ul>
+  
+     {{/each}}
+      </div>
+
+        <div class="article-text">{{{texto}}}</div>
 
 </div>
-</div>
-
 

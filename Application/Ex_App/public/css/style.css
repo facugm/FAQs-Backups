@@ -2,6 +2,7 @@ body {
   padding: 0px;
   font-family: 14px Montserrat, sans-serif;
   background-color: #235784;
+ ;
 }
 
 .barra-singin{
@@ -16,7 +17,7 @@ body {
   position: relative;
   padding: 1%;
   top:25%;
-  left: 93%;
+  left: 90%;
   border: none;
   background: transparent;
   color: #f7aa00;
@@ -26,7 +27,7 @@ body {
   position: relative;
   padding: 1%;
   top:25%;
-  left: 93%;
+
   border: none;
   background: transparent;
   color: #ffd57a;
@@ -160,25 +161,56 @@ height: 100%;
 .article-container{
   position: relative;
   padding: 2%;
-  width: 90%;
-  height:50rem;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 95%;
+  height:auto;
   background-color: white;
+  display: inline-block;
+  text-align: justify;
+  border-radius:4px;
+  font-family: Verdana, Sans-serif;;
+}
 
-  
+.article-title{
+  padding-left: 2%;
 }
 
 .article-text{
-  position: absolute;
+  position: relative;
   height: 100%;
-  display: inline-block;
   padding-left: 2%;
-  display: inline-block;
+  padding-right: 4%;
+  margin: 0;
 }
+
 
 .relacionados{
   position: relative;
+  padding: 0;
   width: 30%;
   background-color: #40a8c4;
-  display: inline-block;
+  float: left;
+  margin: 2%;
+  margin-top: 0;
+
 }
 
+.aligne{
+  text-align: center;
+}
+
+ul {
+  display: block;
+  padding:0;
+  background-color:red;
+}
+
+li{
+padding-left: 40px;
+list-style-type: none;
+}
+li:hover{
+  color: white;
+  background-color:yellow;
+}

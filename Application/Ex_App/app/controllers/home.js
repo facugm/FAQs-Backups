@@ -26,7 +26,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/article/:term', (req, res, next) => {
+/*router.get('/article/:term', (req, res, next) => {
   var pattern = req.params.term;
   db.FAQ_FILE.findOne({attributes: ['ARTICLE_NAME', 'ARTICLE_TEXT'], where: { FAQ_FILE_ID:  pattern }}).then((response)=>{
     console.log("PATRON", pattern);
@@ -37,20 +37,42 @@ router.get('/article/:term', (req, res, next) => {
     });
   })
   
-});
+});*/
 
-router.get('/search', (req, res, err) => { 
+router.get('/article/:term', (req, res, next) => {  
+  var pattern = req.params.term;
+  db.FAQ_FILE.findOne({attributes: ['ARTICLE_NAME', 'ARTICLE_TEXT'], where: { FAQ_FILE_ID:  pattern }}).then((response)=>{
+    db.sequelize.query('SELECT R_FAQ_FILE_ID, ARTICLE_NAME FROM FAQ_FILE_FILE ff INNER JOIN FAQ_FILE fi ON ff.R_FAQ_FILE_ID = fi.FAQ_FILE_ID WHERE L_FAQ_FILE_ID = :key', {replacements: {key: pattern}, type: db.sequelize.QueryTypes.SELECT }).then(rta => {
+      
+      var list = rta.map( item => {
+        return { article: item['ARTICLE_NAME'] }
+      
+        })
+        console.log("PATRON", list);
+      res.render('article_page', {
+      titulo: response.ARTICLE_NAME,
+      texto: response.ARTICLE_TEXT,
+      related: list
 
-    
+    });
+  })
+  })
+ });
+
+router.get('/search', (req, res, err) => {     
   var pattern = req.query.term;
   console.log("PATRON", pattern);
-  db.FAQ_FILE.findAll({attributes: ['ARTICLE_NAME', 'FAQ_FILE_ID'], limit: 10, order: ['ARTICLE_NAME'], where: { ARTICLE_NAME:{$like: "%" + pattern + "%" }}}).then((response)=>{
-    console.log("PATRON", pattern);
-  var list = response.map(function(ele){
-  return { id: ele.FAQ_FILE_ID, value: ele.ARTICLE_NAME, label: ele.ARTICLE_NAME };
+
+ db.sequelize.query("SELECT f. FAQ_FILE_ID, f. ARTICLE_NAME,f. ARTICLE_TEXT FROM FAQ_TAG t INNER JOIN FAQ_FILE_TAG ft ON ft.`FAQ_T_ID` =  t.`FAQ_TAG_ID` INNER JOIN FAQ_FILE f ON f.`FAQ_FILE_ID` = ft.`FAQ_F_ID` WHERE t.TAG_NAME LIKE :key",{replacements: {key: "%"+pattern+"%"}, type: db.sequelize.QueryTypes.SELECT }).then((response)=>{
+  
+  var list = response.map( item => {
+  return { id: item["FAQ_FILE_ID"], value: item['ARTICLE_NAME'], label: item['ARTICLE_NAME'] };
+
   })
+
   res.json(list);
-  });});
+  });
+});
 
 
 
