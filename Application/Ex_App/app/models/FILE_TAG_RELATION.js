@@ -1,21 +1,22 @@
 /* jshint indent: 2 */
+
+
+
 module.exports = function (sequelize, DataTypes) {
 
-  return sequelize.define('FAQ_TAG', {
+  const RELATION = sequelize.define('FILE_TAG_RELATION', {
 
-    FAQ_TAG_ID: {
+    FILE_TAG_RELATION_ID: {
 
       type: DataTypes.INTEGER(10).UNSIGNED,
 
       allowNull: false,
 
-      defaultValue: '0',
-
       primaryKey: true
 
     },
 
-    TAG_NAME: {
+    NAME_RELATION: {
 
       type: DataTypes.STRING(50),
 
@@ -23,11 +24,11 @@ module.exports = function (sequelize, DataTypes) {
 
     },
 
-    TAG: {
+    RELATION: {
 
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(50),
 
-      allowNull: false
+      allowNull: true
 
     },
 
@@ -49,8 +50,10 @@ module.exports = function (sequelize, DataTypes) {
 
   }, {
 
-      tableName: 'FAQ_TAG'
+      tableName: 'FILE_TAG_RELATION'
 
     });
+
+  return RELATION;
 
 };
