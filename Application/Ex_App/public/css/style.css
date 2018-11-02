@@ -2,7 +2,6 @@ body {
   padding: 0px;
   font-family: 14px Montserrat, sans-serif;
   background-color: #235784;
- ;
 }
 
 .barra-singin{
@@ -27,7 +26,6 @@ body {
   position: relative;
   padding: 1%;
   top:25%;
-
   border: none;
   background: transparent;
   color: #ffd57a;
@@ -52,6 +50,7 @@ body {
   transform: translate(-50%, -50%);
   position: absolute;
 }
+
 .search-bar{
   position: relative;
   width: 200%;
@@ -61,62 +60,10 @@ body {
   background-color: transparent;
 }
 
-.buscador {
-  border-radius: 10px;
-  background-color: transparent;
-  border: double;
-  border-color: white;
-  box-shadow: 0px;
-}
-
-.buscador-landingpage {
-  position: relative;
-  border-radius: 100px;
-  background-color: white;
-  width: 95%;
-  height: 40%;
-  border: none;
-  padding: 1%;
-  padding-left: 7%;
-  
- 
-}
-
-.glyphicon-search{
-  color: rgb(149, 149, 149);
-  position: relative;
-  right: 94%;
-  top: 4.5px;
-  font-size: 18px;
-  background-color: transparent;
-  padding:0%;
-  border:none;
-
-}
-
-.dropdown-menu > li > a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.42857143;
-  background-color: #40a8c4;
-  color: #bcdbdf;
-  white-space: nowrap;
-}
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-color: #bcdbdf;
-  text-decoration: none;
-  color: #40a8c4;
-}
-
 .ui-autocomplete {
   z-index: 1001 !important;
   max-height: 13%;
   overflow-y: auto;
-  /* prevent horizontal scrollbar */
-
   overflow-x: hidden;
   display: block;
   clear: both;
@@ -126,28 +73,29 @@ body {
   color: #bcdbdf;
   white-space: nowrap;
   box-shadow: -1px 10px 26px -7px rgba(0, 0, 0, 0.75);
+  border: none !important;
 }
 
-.ui-state-hover, .ui-state-active{
+
+.ui-state-hover, .ui-state-active {
   z-index: 1001 !important;
   max-height: 13%;
   overflow-y: auto;
   overflow-x: hidden;
-  display: block;
+  display: transparent;
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  background-color: #40a8c4;
-  color: #bcdbdf;
-  white-space: nowrap;
+  background: #51b1cc !important;
+  color: white !important;
+  white-space: nowrap; 
+  border:none !important;
 }
-
-
 
 #articles{
 width: 100%;
-border: none;
 height: 100%;
+border: white 2%;
 }
 
 .container-bar-articlepage{
@@ -169,10 +117,10 @@ height: 100%;
   display: inline-block;
   text-align: justify;
   border-radius:4px;
-  font-family: Verdana, Sans-serif;;
+  font-family: Verdana, Sans-serif;
 }
 
-.article-title{
+.articletitle{
   padding-left: 2%;
 }
 
@@ -185,32 +133,38 @@ height: 100%;
 }
 
 
-.relacionados{
+.relcontainer{
   position: relative;
   padding: 0;
   width: 30%;
-  background-color: #40a8c4;
   float: left;
   margin: 2%;
+  padding-top: 0.9%;
   margin-top: 0;
-
 }
 
 .aligne{
   text-align: center;
 }
 
-ul {
+.ulrel{
   display: block;
   padding:0;
-  background-color:red;
+  margin:0;
+  padding-top: 1%;
+  background-color:#40a8c4;
+  border: 50px;
 }
 
-li{
-padding-left: 40px;
-list-style-type: none;
+.rel{
+ padding-left: 40px;
+ list-style-type: none;
+ padding-top: 1%;
+ padding-block-end: 1%;
 }
-li:hover{
-  color: white;
-  background-color:yellow;
+
+.rel:hover{
+  color: #bcdbdf;
+  background-color: #2b768b;
 }
+
