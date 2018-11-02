@@ -15,8 +15,8 @@ body {
 .bottom-singin{
   position: relative;
   padding: 1%;
-  top:25%;
-  left: 90%;
+  top: auto%;
+  left: 86%;
   border: none;
   background: transparent;
   color: #f7aa00;
@@ -24,8 +24,6 @@ body {
 
 .bottom-singin:hover{
   position: relative;
-  padding: 1%;
-  top:25%;
   border: none;
   background: transparent;
   color: #ffd57a;
@@ -134,8 +132,8 @@ border: white 2%;
 
 
 .relcontainer{
-  position: relative;
-  padding: 0;
+  position: inherit;
+  left: -1.8%;
   width: 30%;
   float: left;
   margin: 2%;
@@ -168,3 +166,17 @@ border: white 2%;
   background-color: #2b768b;
 }
 
+.glyphicon{
+	font-size: 20px;
+	position: relative;
+	padding: 1%;
+	top: auto;
+	left: 85%;
+	border: none;
+	background: transparent;
+	color: #f7aa00;
+}
+
+.glyphicon:hover{
+	color: #ffd57a;
+	}

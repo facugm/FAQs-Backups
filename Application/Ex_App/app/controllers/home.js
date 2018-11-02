@@ -45,15 +45,13 @@ router.get('/article/:term', (req, res, next) => {
     db.sequelize.query('SELECT R_FAQ_FILE_ID, ARTICLE_NAME FROM FAQ_FILE_FILE ff INNER JOIN FAQ_FILE fi ON ff.R_FAQ_FILE_ID = fi.FAQ_FILE_ID WHERE L_FAQ_FILE_ID = :key', {replacements: {key: pattern}, type: db.sequelize.QueryTypes.SELECT }).then(rta => {
       
       var list = rta.map( item => {
-        return { article: item['ARTICLE_NAME'] }
-      
+        return { article: item['ARTICLE_NAME'], id: item['R_FAQ_FILE_ID']}     
         })
         console.log("PATRON", list);
       res.render('article_page', {
       titulo: response.ARTICLE_NAME,
       texto: response.ARTICLE_TEXT,
       related: list
-
     });
   })
   })

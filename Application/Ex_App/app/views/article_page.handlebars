@@ -1,4 +1,4 @@
-{{> login-bar}}
+{{> login-home-bar}}
 
 <div class="container-bar-articlepage">
     {{> search}}
@@ -14,7 +14,9 @@
      {{#each related}}
 
        <ul class="ulrel">
-           <li class="rel"> {{this.article}}</li>
+           <li class="rel">
+               <a href = '/article/{{this.id}}'>{{this.article}}</a>
+            </li>
        </ul>
   
      {{/each}}
