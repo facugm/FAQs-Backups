@@ -18,7 +18,7 @@ body {
   position: relative;
   padding: 1%;
   top: auto;
-  left: 84%;
+  left: 88%;
   border: none;
   background: transparent;
   color: #f8c93b;
@@ -173,10 +173,10 @@ text-decoration: none;
 
 .glyphicon{
 	font-size: 20px;
-	position: relative;
+	position: absolute;
 	padding: 1%;
-	top: auto;
-	left: 85%;
+	top: -2%;
+	left: 83%;
 	border: none;
 	background: transparent;
 	color: #f8c93b;
