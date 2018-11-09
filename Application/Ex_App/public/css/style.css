@@ -18,7 +18,7 @@ body {
   position: relative;
   padding: 1%;
   top: auto;
-  left: 88%;
+  left: 84%;
   border: none;
   background: transparent;
   color: #f8c93b;
@@ -69,7 +69,7 @@ body {
   font-weight: normal;
   line-height: 1.42857143;
   background-color: #548ec0;
-  color: rgb(223, 223, 223);
+  color: #bcdbdf;
   white-space: nowrap;
   box-shadow: -1px 10px 26px -7px rgba(0, 0, 0, 0.75);
   border: none !important;
@@ -85,7 +85,7 @@ body {
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  background:  #536f88 !important;
+  background:  #235784 !important;
   color: white !important;
   white-space: nowrap; 
   border:none !important;
@@ -171,9 +171,10 @@ a:link
 text-decoration: none;
 }
 
+
 .glyphicon{
 	font-size: 20px;
-	position: absolute;
+	position: relative;
 	padding: 1%;
 	top: -2%;
 	left: 83%;
@@ -185,3 +186,60 @@ text-decoration: none;
 .glyphicon:hover{
 	color: #ffd57a;
 	}
+
+#title{
+  margin-left: 1%;
+}
+
+#title-input{
+  position: relative;
+  margin: 1%;
+  width: 98%;
+  border: 1px solid #cfcfcf;
+  padding: 0.5%;
+}
+
+.button-save {
+   
+    backface-visibility: hidden;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    background: #89a4c6;
+    border-radius: 0px;
+    border: 1px solid #e1e1e1;
+    border-width: 1px 1px 1px 1px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0px 1px 0px #ffffff,0px 1px 3px rgba(0%,0%,0%,0.3);
+    color: #4e4e4e;
+    font-size: 16px;
+    font-family: cursive;
+    font-weight: 100;
+    font-style: normal;
+    left:0;
+    margin: 1%;
+    text-shadow: 0px -1px 0px rgba(0%,0%,0%,0.4)
+    }
+    .button > div {
+      color: #999;
+    font-size: 10px;
+    font-family: Helvetica Neue;
+    font-weight: initial;
+    font-style: normal;
+    text-align: center;
+    margin: 0px 0px 0px 0px
+    }
+    .button > i {
+      font-size: 1em;
+    border-radius: 0px;
+    border: 0px solid transparent;
+    border-width: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    position: static
+    }
+    .button > .ld {
+      font-size: initial
+    }
+  }

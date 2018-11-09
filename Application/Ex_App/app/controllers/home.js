@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const Sequelize = require('sequelize');
+
 module.exports = (app) => {
   app.use('/', router);
 
@@ -22,7 +23,13 @@ router.get('/', (req, res, next) => {
 
 router.get('/', (req, res, next) => {
   res.render('landing_page', {
-    titulo: "BIENVENIDO"
+    titulo: "Landing Page"
+  });
+});
+
+router.get('/edit/', (req, res, next) => {
+  res.render('edit_page', {
+    titulo: "Editar artículo"
   });
 });
 

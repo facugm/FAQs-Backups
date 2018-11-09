@@ -22,6 +22,17 @@
     <script src="http://localhost:35729/livereload.js"></script>
   {{/if}} -->
 
+<script src="https://cdn.ckeditor.com/4.11.1/full-all/ckeditor.js"></script>
+<script>
+    window.onload = function() {
+
+    CKEDITOR.replace( 'editor' , {
+	    customConfig: '/ckeditor/config.js',
+      stylesSet: '/ckeditor/style.js'
+    } );
+  }
+</script> 
+
 </head>
 <body>
 
