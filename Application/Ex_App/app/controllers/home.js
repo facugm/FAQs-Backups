@@ -99,3 +99,20 @@ router.get('/search', (req, res, err) => {
   res.json(list);
   });
 });
+
+router.get('/searchR', (req, res, err) => {     
+  var pattern = req.query.term;
+  console.log("PATRON", pattern);
+
+ db.sequelize.query("SELECT FAQ_FILE_ID, ARTICLE_NAME FROM FAQ_FILE WHERE ARTICLE_NAME LIKE :key LIMIT 10",{replacements: {key: "%"+pattern+"%"}, type: db.sequelize.QueryTypes.SELECT }).then((response)=>{
+  
+  var list = response.map( item => {
+  return { id: item["FAQ_FILE_ID"], value: item['ARTICLE_NAME'], label: item['ARTICLE_NAME'] };
+
+  })
+
+  res.json(list);
+
+  
+  });
+});

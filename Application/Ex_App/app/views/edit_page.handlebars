@@ -13,15 +13,68 @@
 </div>
 
 <h4 id="title">Tags</h4>
-<input type= "text" id="title-input" value=>
-<!-- {{#each tag}}{{this.tag}}{{/each}} -->
+  <script>
+  $( function() {
+
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+ 
+    $( "#tags" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+
+      .autocomplete({
+        source: //function( request, response ) {
+         function(req, res){
+        $.getJSON( "/searchR", req, function( data, status, xhr ) {  
+        return res($.ui.autocomplete.filter(
+            data, extractLast(req.term)
+        ));
+      }); 
+    },
+         minLength: 1,
+          //response( $.ui.autocomplete.filter(
+            //availableTags, extractLast( request.term ) ) );
+       // },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+  } );
+  </script>
+
+<div class="ui-widget">
+  <input id="tags" class="tags-input">
+</div>
 
 <h4 id="title">Articulos relacionados</h4>
 <input type= "text" id="title-input">
 
 
 <input type="submit" value="Guardar" class="button-save" onclick="insert()">
-<!-- sample html for this button-->
+
+<input type="submit" value="Cancelar" class="button-save" onclick="back()">
 
 
 </form>
