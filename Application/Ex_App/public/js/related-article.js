@@ -5,7 +5,7 @@
     minimumInputLength: 3,
     ajax: {
         url: function (params) {
-      return '/searchR/';
+      return '/searchRelated/';
     },
     processResults: function (data) {
     return {

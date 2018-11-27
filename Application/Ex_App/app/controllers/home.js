@@ -100,7 +100,7 @@ router.get('/search', (req, res, err) => {
   });
 });
 
-router.get('/searchR', (req, res, err) => {     
+router.get('/searchRelated', (req, res, err) => {     
   var pattern = req.query.term;
   console.log("PATRON", pattern);
 
@@ -112,7 +112,19 @@ router.get('/searchR', (req, res, err) => {
   })
 
   res.json(list);
+  });
+});
 
+router.get('/searchTags', (req, res, err) => {     
+  var pattern = req.query.term;
+
+ db.sequelize.query("SELECT TAG_NAME, FAQ_TAG_ID FROM FAQ_TAG WHERE TAG_NAME LIKE :key LIMIT 10",{replacements: {key: "%"+pattern+"%"}, type: db.sequelize.QueryTypes.SELECT }).then((response)=>{
   
+  var list = response.map( item => {
+  return { id: item["FAQ_TAG_ID"], text: item['TAG_NAME']};
+
+  })
+
+  res.json(list);
   });
 });
