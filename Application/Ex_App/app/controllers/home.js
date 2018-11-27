@@ -87,7 +87,7 @@ router.get('/article/:term', (req, res, next) => {
 
 router.get('/search', (req, res, err) => {     
   var pattern = req.query.term;
-  console.log("PATRON", pattern);
+
 
  db.sequelize.query("SELECT f. FAQ_FILE_ID, f. ARTICLE_NAME,f. ARTICLE_TEXT FROM FAQ_TAG t INNER JOIN FAQ_FILE_TAG ft ON ft.`FAQ_T_ID` =  t.`FAQ_TAG_ID` INNER JOIN FAQ_FILE f ON f.`FAQ_FILE_ID` = ft.`FAQ_F_ID` WHERE t.TAG_NAME LIKE :key LIMIT 10",{replacements: {key: "%"+pattern+"%"}, type: db.sequelize.QueryTypes.SELECT }).then((response)=>{
   
@@ -95,7 +95,7 @@ router.get('/search', (req, res, err) => {
   return { id: item["FAQ_FILE_ID"], value: item['ARTICLE_NAME'], label: item['ARTICLE_NAME'] }
 
   })
-
+  console.log("PATRON", list);
   res.json(list);
   });
 });
@@ -107,7 +107,7 @@ router.get('/searchR', (req, res, err) => {
  db.sequelize.query("SELECT FAQ_FILE_ID, ARTICLE_NAME FROM FAQ_FILE WHERE ARTICLE_NAME LIKE :key LIMIT 10",{replacements: {key: "%"+pattern+"%"}, type: db.sequelize.QueryTypes.SELECT }).then((response)=>{
   
   var list = response.map( item => {
-  return { id: item["FAQ_FILE_ID"], value: item['ARTICLE_NAME'], label: item['ARTICLE_NAME'] };
+  return { id: item["FAQ_FILE_ID"], text: item['ARTICLE_NAME']};
 
   })
 

@@ -29,7 +29,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
 	config.language = 'es';
-	config.uiColor = '#F7B42C';
+	config.uiColor = '#FFFFFF';
 	config.height = 300;
 	config.toolbarCanCollapse = true;
 

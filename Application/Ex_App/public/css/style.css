@@ -191,7 +191,15 @@ text-decoration: none;
   margin-left: 1%;
 }
 
-#title-input{
+.title-input{
+  position: relative;
+  margin: 1%;
+  width: 98%;
+  border: 1px solid #cfcfcf;
+  padding: 0.5%;
+}
+
+.tags-input{
   position: relative;
   margin: 1%;
   width: 98%;
@@ -242,4 +250,3 @@ text-decoration: none;
     .button > .ld {
       font-size: initial
     }
-  }
