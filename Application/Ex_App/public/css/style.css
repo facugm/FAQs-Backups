@@ -191,15 +191,23 @@ text-decoration: none;
   margin-left: 1%;
 }
 
-.title-input{
-  position: relative;
+#art-rel{
+  position: relative !important;
   margin: 1%;
-  width: 98%;
-  border: 1px solid #cfcfcf;
-  padding: 0.5%;
+  width: 98% !important;
+  border: 1px solid #cfcfcf !important;
+  padding: 0.5% !important;
 }
 
-.tags-input{
+#input-title{
+  position: relative !important;
+  margin: 1%;
+  width: 98% !important;
+  border: 1px solid #cfcfcf !important;
+  padding: 0.5% !important;
+}
+
+#tags-input{
   position: relative;
   margin: 1%;
   width: 98%;

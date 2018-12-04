@@ -1,7 +1,8 @@
  
 $(document).ready(function() {
-  $("#tags").select2({
+  $("#tags-input").select2({
     minimumInputLength: 1,
+    witdh: 'resolve',
     ajax: {
         url: function (params) {
       return '/searchTags/';

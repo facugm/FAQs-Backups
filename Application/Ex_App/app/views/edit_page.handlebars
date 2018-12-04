@@ -6,7 +6,7 @@
 <form method="post">
 
 <h4 id="title">Título</h4>
-<input type= "text" class="title-input" value="{{article_name}}">
+<input type= "text" id="input-title" value="{{article_name}}">
 
 <div id="editor">
     {{{texto}}}
@@ -15,20 +15,12 @@
 
   
 
-<div class="ui-widget">
 <h4 id="title">Tags</h4>
-  <select id='tags' class="tags-input" multiple="multiple"></select>
-</div>
+  <select id='tags-input'  multiple="multiple"></select>
 
-<div class="ui-widget">
 <h4 id="title">Articulos relacionados</h4>
-  <select id='art-rel' class="title-input" multiple="multiple"></select>
-</div>
+  <select id='art-rel'  multiple="multiple"></select>
 
-<script>
-
-
-</script>
 
 <input type="submit" value="Guardar" class="button-save" onclick="insert()">
 
