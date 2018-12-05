@@ -1,6 +1,3 @@
-
-
-
 <h3 id= "title">Editar</h3>
 
 <form method="post">
@@ -16,15 +13,19 @@
   
 
 <h4 id="title">Tags</h4>
+<div class="centrado">
   <select id='tags-input'  multiple="multiple"></select>
+</div>
+
 
 <h4 id="title">Articulos relacionados</h4>
+<div class="centrado">
   <select id='art-rel'  multiple="multiple"></select>
+</div>
 
-
-<input type="submit" value="Guardar" class="button-save" onclick="insert()">
-
-<input type="submit" value="Cancelar" class="button-save" onclick="back()">
-
+<div class="buttons-edit">
+<button type="button" class="btn btn-default" onclick="back()">Cancelar</button>
+<button type="button" class="btn btn-info" onclick="insert()">Guardar</button>
+</div>
 
 </form>

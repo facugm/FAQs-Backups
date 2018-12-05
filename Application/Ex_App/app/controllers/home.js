@@ -9,14 +9,12 @@ module.exports = (app) => {
 };
 /*
 router.get('/', (req, res, next) => {
-
   db.Article.findAll().then((articles) => {
     res.render('index', {
       title: "HOLA",
       text: "blabalbdlabdasl",
       articles: articles
     });
-
 });
 });
 */
@@ -58,7 +56,6 @@ router.get('/edit/:term', (req, res, next) => {
   var pattern = req.params.term;
   db.FAQ_FILE.findOne({attributes: ['ARTICLE_NAME', 'ARTICLE_TEXT'], where: { FAQ_FILE_ID:  pattern }}).then((response)=>{
     console.log("PATRON", pattern);
-
     res.render('article_page', {
       titulo: response.ARTICLE_NAME,
       texto: response.ARTICLE_TEXT 
@@ -100,7 +97,7 @@ router.get('/search', (req, res, err) => {
   });
 });
 
-router.get('/searchR', (req, res, err) => {     
+router.get('/searchRelated', (req, res, err) => {     
   var pattern = req.query.term;
   console.log("PATRON", pattern);
 
@@ -112,7 +109,19 @@ router.get('/searchR', (req, res, err) => {
   })
 
   res.json(list);
+  });
+});
 
+router.get('/searchTags', (req, res, err) => {     
+  var pattern = req.query.term;
+
+ db.sequelize.query("SELECT TAG_NAME, FAQ_TAG_ID FROM FAQ_TAG WHERE TAG_NAME LIKE :key LIMIT 10",{replacements: {key: "%"+pattern+"%"}, type: db.sequelize.QueryTypes.SELECT }).then((response)=>{
   
+  var list = response.map( item => {
+  return { id: item["FAQ_TAG_ID"], text: item['TAG_NAME']};
+
+  })
+
+  res.json(list);
   });
 });
