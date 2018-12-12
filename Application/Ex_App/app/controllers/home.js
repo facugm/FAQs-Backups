@@ -26,31 +26,37 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/edit/:term', (req, res, next) => {
-  var pattern = req.params.term;
+  res.render('edit_page', {
+    titulo: "Editar artículo",
+    id: req.params.term
+    });
+});
+
+router.get('/page/edit/:id', (req, res, next)=>{
+  var pattern = req.params.id;
   db.FAQ_FILE.findOne({attributes: ['ARTICLE_NAME', 'ARTICLE_TEXT'], where: { FAQ_FILE_ID:  pattern }}).then((response)=>{
     db.sequelize.query('SELECT R_FAQ_FILE_ID, ARTICLE_NAME FROM FAQ_FILE_FILE ff INNER JOIN FAQ_FILE fi ON ff.R_FAQ_FILE_ID = fi.FAQ_FILE_ID WHERE L_FAQ_FILE_ID = :key', {replacements: {key: pattern}, type: db.sequelize.QueryTypes.SELECT }).then(rta => {
-      db.sequelize.query('SELECT t.TAG_NAME FROM FAQ_TAG t INNER JOIN FAQ_FILE_TAG ft ON ft.`FAQ_T_ID`= t.`FAQ_TAG_ID` INNER JOIN FAQ_FILE ff ON ff.`FAQ_FILE_ID` = ft.`FAQ_F_ID` WHERE ff.`FAQ_FILE_ID` = :key', {replacements: {key: pattern}, type: db.sequelize.QueryTypes.SELECT}).then(respuesta =>{
+      db.sequelize.query('SELECT * FROM FAQ_TAG t INNER JOIN FAQ_FILE_TAG ft ON ft.`FAQ_T_ID`= t.`FAQ_TAG_ID` INNER JOIN FAQ_FILE ff ON ff.`FAQ_FILE_ID` = ft.`FAQ_F_ID` WHERE ff.`FAQ_FILE_ID` = :key', {replacements: {key: pattern}, type: db.sequelize.QueryTypes.SELECT}).then(respuesta =>{
 
         var lista = respuesta.map( item => {
-          return { tag: item['TAG_NAME']}     
+          return {id: item['FAQ_TAG_ID'], text: item['TAG_NAME']}     
           })
     
       var list = rta.map( item => {
-        return { article: item['ARTICLE_NAME'], id: item['R_FAQ_FILE_ID']}     
+        return { id: item['R_FAQ_FILE_ID'], text: item['ARTICLE_NAME']}     
         });
 
-  console.log(response.ARTICLE_NAME);
-
-  res.render('edit_page', {
-    titulo: "Editar artículo",
+   res.json({
     article_name: response.ARTICLE_NAME,
     texto: response.ARTICLE_TEXT,
     tag: lista,
-    related: list
-    });
-  });
-  });
+    related: list,
+   });
+   console.log("ART",response.ARTICLE_NAME)
+
 });
+});
+}); 
 });
 /*router.get('/article/:term', (req, res, next) => {
   var pattern = req.params.term;

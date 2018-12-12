@@ -3,7 +3,8 @@
 <form method="post">
 
 <h4 id="title">Título</h4>
-<input type= "text" id="input-title" value="{{article_name}}">
+<input type="hidden" name="idPage" value={{id}} id="idPage" />
+<input type= "text" id="input-title">
 
 <div id="editor">
     {{{texto}}}
@@ -22,7 +23,6 @@
 <div class="centrado">
   <select id='art-rel'  multiple="multiple"></select>
 </div>
-
 <div class="buttons-edit">
 <button type="button" class="btn btn-default" onclick="back()">Cancelar</button>
 <button type="button" class="btn btn-info" onclick="insert()">Guardar</button>
