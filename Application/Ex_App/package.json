@@ -19,6 +19,7 @@
     "express": "^4.13.3",
     "express-handlebars": "^3.0.0",
     "glob": "^6.0.4",
+    "handlebars-extend-block": "^1.0.0",
     "method-override": "^2.3.0",
     "morgan": "^1.9.1",
     "mysql": "^2.8.0",

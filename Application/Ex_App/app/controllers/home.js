@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const Sequelize = require('sequelize');
-
+var handlebars = require('handlebars');
+var extend = require('handlebars-extend-block');
+ 
+handlebars = extend(handlebars);
 module.exports = (app) => {
   app.use('/', router);
 
@@ -48,7 +51,7 @@ router.get('/page/edit/:id', (req, res, next)=>{
 
    res.json({
     article_name: response.ARTICLE_NAME,
-    texto: response.ARTICLE_TEXT,
+    article_text: response.ARTICLE_TEXT,
     tag: lista,
     related: list,
    });

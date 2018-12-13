@@ -1,3 +1,7 @@
+{{#extend "stylesheets"}}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+{{/extend}}
+
 <h3 id= "title">Editar</h3>
 
 <form method="post">
@@ -29,3 +33,20 @@
 </div>
 
 </form>
+
+{{#extend "scripts"}}
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
+      <script src="/js/related-article.js"></script>
+      <script src="/js/tags.js"></script>
+      <script src="https://cdn.ckeditor.com/4.11.1/full-all/ckeditor.js"></script>
+<script>
+    window.onload = function() {
+
+    CKEDITOR.replace( 'editor' , {
+	    customConfig: '/ckeditor/config.js',
+      stylesSet: '/ckeditor/style.js'
+    } );
+  }
+</script> 
+{{/extend}}  
