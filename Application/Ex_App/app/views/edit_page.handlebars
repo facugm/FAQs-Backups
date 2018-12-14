@@ -2,51 +2,48 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 {{/extend}}
 
-<h3 id= "title">Editar</h3>
+<h3 class="title">Editar</h3>
 
 <form method="post">
 
-<h4 id="title">Título</h4>
-<input type="hidden" name="idPage" value={{id}} id="idPage" />
-<input type= "text" id="input-title">
+  <h4 class="title">Título</h4>
+  <input type="hidden" name="idPage" value={{id}} id="idPage" />
+  <input type="text" id="input-title">
 
-<div id="editor">
-    {{{texto}}}
-</div>
+  <textarea id="editor"></textarea>
 
-
-  
-
-<h4 id="title">Tags</h4>
-<div class="centrado">
-  <select id='tags-input'  multiple="multiple"></select>
-</div>
+  <h4 class="title">Tags</h4>
+  <div class="centrado">
+    <select id='tags-input' multiple>
+    </select>
+  </div>
 
 
-<h4 id="title">Articulos relacionados</h4>
-<div class="centrado">
-  <select id='art-rel'  multiple="multiple"></select>
-</div>
-<div class="buttons-edit">
-<button type="button" class="btn btn-default" onclick="back()">Cancelar</button>
-<button type="button" class="btn btn-info" onclick="insert()">Guardar</button>
-</div>
+  <h4 class="title">Articulos relacionados</h4>
+  <div class="centrado">
+    <select id='art-rel' multiple></select>
+  </div>
+  <div class="buttons-edit">
+    <button type="button" class="btn btn-default" id="b-back" onclick="back()">Cancelar</button>
+    <button type="button" class="btn btn-info" id="b-save" onclick="insert()">Guardar</button>
+  </div>
 
 </form>
 
 {{#extend "scripts"}}
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
-      <script src="/js/related-article.js"></script>
-      <script src="/js/tags.js"></script>
-      <script src="https://cdn.ckeditor.com/4.11.1/full-all/ckeditor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
+<script src="/js/tags.js"></script>
+<script src="/js/inic.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.1/full-all/ckeditor.js"></script>
 <script>
-    window.onload = function() {
+  window.onload = function () {
 
-    CKEDITOR.replace( 'editor' , {
-	    customConfig: '/ckeditor/config.js',
+    CKEDITOR.replace('editor', {
+      customConfig: '/ckeditor/config.js',
       stylesSet: '/ckeditor/style.js'
-    } );
+    });
   }
-</script> 
-{{/extend}}  
+</script>
+
+{{/extend}}
