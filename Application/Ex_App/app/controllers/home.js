@@ -60,17 +60,14 @@ router.get('/page/edit/:id', (req, res, next) => {
     });
   });
 });
-/*router.get('/article/:term', (req, res, next) => {
-  var pattern = req.params.term;
-  db.FAQ_FILE.findOne({attributes: ['ARTICLE_NAME', 'ARTICLE_TEXT'], where: { FAQ_FILE_ID:  pattern }}).then((response)=>{
-    console.log("PATRON", pattern);
-    res.render('article_page', {
-      titulo: response.ARTICLE_NAME,
-      texto: response.ARTICLE_TEXT 
-    });
-  })
-  
-});*/
+
+router.get('/save', (req, res, next) => {
+  var pattern = req.query;
+  console.log(pattern);
+
+//db.sequelize.query('SELECT * FROM FAQ_FILE_FILE WHERE id= :key', { replacements: { key: pattern }, type: db.sequelize.QueryTypes.SELECT });
+
+});
 
 router.get('/article/:term', (req, res, next) => {
   var pattern = req.params.term;
