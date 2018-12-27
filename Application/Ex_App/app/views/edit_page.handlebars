@@ -4,13 +4,14 @@
 
 <h3 class="title">Editar</h3>
 
-<form method="post">
+{{!-- <form method="post"> --}}
 
   <h4 class="title">Título</h4>
   <input type="hidden" name="idPage" value={{id}} id="idPage" />
   <input type="text" id="input-title">
 
-  <textarea id="editor"></textarea>
+  {{!-- <textarea id="edittext" name="edittext" cols="80" rows="10"></textarea> --}}
+  <div id="edittext"></div>
 
   <h4 class="title">Tags</h4>
   <div class="centrado">
@@ -18,17 +19,16 @@
     </select>
   </div>
 
-
   <h4 class="title">Articulos relacionados</h4>
   <div class="centrado">
     <select id='art-rel' multiple></select>
   </div>
   <div class="buttons-edit">
     <button type="button" class="btn btn-default" id="b-back" onclick="back()">Cancelar</button>
-    <button type="button" class="btn btn-info" id="b-save" onclick="insert()">Guardar</button>
+    <button type="button" class="btn btn-info" id="b-save" onclick="save()">Guardar</button>
   </div>
 
-</form>
+  {{!-- </form> --}}
 
 {{#extend "scripts"}}
 
@@ -37,12 +37,17 @@
 <script src="/js/inic.js"></script>
 <script src="https://cdn.ckeditor.com/4.11.1/full-all/ckeditor.js"></script>
 <script>
-  window.onload = function () {
-
-    CKEDITOR.replace('editor', {
+  var texteditor;
+  function load(content) {
+    var config = {
       customConfig: '/ckeditor/config.js',
       stylesSet: '/ckeditor/style.js'
-    });
+    };
+    texteditor = CKEDITOR.appendTo('edittext', config, content);
+  }
+  function save() {
+    var edited = texteditor.getData();
+    insert(edited);
   }
 </script>
 

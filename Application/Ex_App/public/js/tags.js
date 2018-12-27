@@ -33,11 +33,11 @@ $(document).ready(function () {
           };
         }
       }
-    })
+    });
 
     $("#input-title").val(json.article_name);
 
-    $("#editor").val(json.article_text);
+    load(json.article_text);
   });
 });
 

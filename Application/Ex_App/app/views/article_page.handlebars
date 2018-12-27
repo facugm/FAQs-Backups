@@ -1,31 +1,31 @@
 {{> login-home-bar}}
 
 <div class="container-bar-articlepage">
-    {{> search}}
+  {{> search}}
 </div>
 
 <div class="aligne">
-
-
-<div class= "article-container">
+  <input type="hidden" name="idPage" value={{artid}} id="idPage" />
+  <div class="article-container">
     <h1 class="article-title">{{titulo}}</h1>
-
     <div class="relcontainer">
-     {{#each related}}
-
-       <ul class="ulrel">
-         <a href = '/article/{{this.id}}'>  <li class="rel">
-               {{this.article}}
-            </li></a>
-       </ul>
-  
-     {{/each}}
-      </div>
-
-        <div class="article-text">{{{texto}}}</div>
-
+      {{#each related}}
+      <ul class="ulrel">
+        <a href='/article/{{this.id}}'>
+          <li class="rel">
+            {{this.article}}
+          </li>
+        </a>
+      </ul>
+      {{/each}}
+    </div>
+    <div class="article-text">{{{texto}}}</div>
+  </div>
+  <div class="buttons-edit">
+    <button type="button" class="btn btn-info" id="b-save" onclick="edit({{artid}})">Editar</button>
+  </div>
+  {{#extend "scripts"}}
+  <script src="/js/autocompletar.js"></script>
+  <script src="/js/edit.js"></script>
+  {{/extend}}
 </div>
-
-{{#extend "scripts"}}
-      <script src="/js/autocompletar.js"></script>
-{{/extend}}  
